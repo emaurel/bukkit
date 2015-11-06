@@ -5,6 +5,7 @@ WORKDIR /bukkit
 RUN apt-get update && apt-get install -y wget git
 RUN wget https://hub.spigotmc.org/jenkins/job/BuildTools/lastSuccessfulBuild/artifact/target/BuildTools.jar
 RUN java -jar BuildTools.jar
+# RUN java -jar BuildTools.jar --rev 1.8.8
 RUN touch start-server.sh
 RUN echo '#!/bin/bash' >> start-server.sh
 RUN echo 'cd -P $(dirname $0)' >> start-server.sh
